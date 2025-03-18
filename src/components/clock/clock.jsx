@@ -11,11 +11,21 @@ function Clock  ()  {
             clearInterval(interval);
         }
     }, []);
-  return (
-    <div>clock
-    <h2>{time.toLocaleTimeString()}</h2>
+
+    const formattedTime = time.toLocaleTimeString();
+    const formattedDate = time.toLocaleDateString();
+//   return <h1>
+//     {formattedTime}
+//     {formattedDate}
+//   </h1>;
+
+return (
+    <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", height:"100vh", fontSize:"25px"}}>
+        <h1 style={{textAlign:"center"}}>{formattedDate}</h1>
+        <h2 style ={{textAlign:"center"}}>{formattedTime}</h2>
     </div>
-  )
+)
+  
 }
 
 export default Clock;
